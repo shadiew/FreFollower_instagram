@@ -17,176 +17,373 @@ $controllerName = $this->route->params["controller"];
 $actionName     = $this->route->params["action"];
 ?>
 <!DOCTYPE html>
-<html lang="id">
 
-<head>
+<html
+  lang="en"
+  class="light-style layout-navbar-fixed layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="/themes/adminarea/assets/"
+  data-template="vertical-menu-template">
+  <head>
     <?php $this->section("section_head"); ?>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-    <link href="/themes/adminarea/informatikamuv1/styles.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon" />
-    <script src="/assets/themes/adminex/js/jquery-1.10.2.min.js"></script>
-    <script src="/assets/themes/adminex/js/jquery-migrate-1.2.1.min.js"></script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
     <title><?php if ($this->has('title')) {
                 echo $this->get('title') . " | ";
             }
             echo Wow::get("ayar/site_title"); ?></title>
-    <?php if ($this->has('description')) { ?>
-        <meta name="description" content="<?php echo $this->get('description'); ?>"><?php } ?>
-    <?php if ($this->has('keywords')) { ?>
-        <meta name="keywords" content="<?php echo $this->get('keywords'); ?>"><?php } ?>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/themes/adminarea/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+      rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+    <link rel="stylesheet" href="/themes/adminarea/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="/themes/adminarea/assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="/themes/adminarea/assets/vendor/js/template-customizer.js"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="/themes/adminarea/assets/js/config.js"></script>
     <?php $this->show(); ?>
-</head>
+  </head>
 
-<body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand ps-3" href="<?php echo Wow::get("project/adminPrefix"); ?>">
-            <img src="https://ig.informatikamu.id/themes/ig2/images/logo.png" class="me-1" alt="logo informatikamu" style="margin-top: -10px;" width="30px">
-            <span style="font-weight:400;font-size:1.3rem;" class="text-light">Informatikamu</span></a>
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
 
-        <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0" action="<?php echo Wow::get("project/adminPrefix"); ?>/insta" method="post">
-            <div class="input-group">
-                <input class="form-control" type="text" name="username" placeholder="Search for..." />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
-        <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="<?php echo Wow::get("project/adminPrefix"); ?>/account">Settings</a></li>
-                    <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="<?php echo Wow::get("project/adminPrefix"); ?>/account/logout">Logout</a></li>
-                </ul>
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="index.html" class="app-brand-link">
+              <span class="app-brand-logo demo">
+                <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
+                    fill="#7367F0" />
+                  <path
+                    opacity="0.06"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z"
+                    fill="#161616" />
+                  <path
+                    opacity="0.06"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z"
+                    fill="#161616" />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
+                    fill="#7367F0" />
+                </svg>
+              </span>
+              <span class="app-brand-text demo menu-text fw-bold">Adminpanel</span>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+              <i class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"></i>
+              <i class="ti ti-x d-block d-xl-none ti-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboards -->
+            
+
+            <li class="menu-item <?php if ($controllerName == "Admin/Home") { ?> active<?php } ?>">
+              <a href="<?php echo Wow::get("project/adminPrefix"); ?>" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-smart-home"></i>
+                <div data-i18n="Beranda">Beranda</div>
+              </a>
             </li>
-        </ul>
-    </nav>
 
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Main</div>
-                        <a class="nav-link <?php if ($controllerName == "Admin/Home") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
-                        </a>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#listuser" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fa fa-users"></i></div>
-                            Member
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="listuser" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link <?php if ($controllerName == "Admin/Bakmi") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/bakmi">List Users</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Userfollow") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/userfollow">User Follow Mati</a>
-                            </nav>
-                        </div>
+            <li class="menu-item <?php if ($controllerName == "Admin/Bakmi") { ?> active<?php } ?>">
+              <a href="<?php echo Wow::get("project/adminPrefix"); ?>/bakmi" class="menu-link">
+               <i class="menu-icon tf-icons ti ti-users"></i>
+                <div data-i18n="Member">Member</div>
+              </a>
+            </li>
+            
+           
 
+            <!-- Apps & Pages -->
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Core</span>
+            </li>
+            <li class="menu-item <?php if ($controllerName == "Admin/Settings" && $actionName == "Index") { ?> active<?php } ?>">
+              <a href="<?php echo Wow::get("project/adminPrefix"); ?>/settings" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-settings"></i>
+                <div data-i18n="Pengaturan">Pengaturan</div>
+              </a>
+            </li>
+            <li class="menu-item <?php if ($controllerName == "Admin/Settings" && $actionName == "Cron") { ?> active<?php } ?>">
+              <a href="<?php echo Wow::get("project/adminPrefix"); ?>/settings/cron" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-id"></i>
+                <div data-i18n="Cronjob">Cronjob</div>
+              </a>
+            </li>
+            
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-forms"></i>
+                <div data-i18n="Tools">Tools</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item <?php if ($controllerName == "Admin/Islemler" && $actionName == "Index") { ?> active<?php } ?>">
+                  <a href="<?php echo Wow::get("project/adminPrefix"); ?>/islemler" class="menu-link">
+                    <div data-i18n="Passive Remover">Passive Remover</div>
+                  </a>
+                </li>
 
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts1" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Settings
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link <?php if ($controllerName == "Admin/Settings" && $actionName == "Index") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/settings">Edit Settings</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Settings" && $actionName == "Cron") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/settings/cron">Edit Cron</a>
-                            </nav>
-                        </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Tools
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link <?php if ($controllerName == "Admin/Islemler" && $actionName == "Index") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/islemler">Passive Remover</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Islemler" && $actionName == "AddUserPass") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/islemler/add-user-pass">Add User Manual</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Bakim") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/bakim">Maintenance</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Wizard") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/wizard/export">Export</a>
-                                <a class="nav-link <?php if ($controllerName == "Admin/Wizard") { ?> active<?php } ?>" href="<?php echo Wow::get("project/adminPrefix"); ?>/wizard/import">Import</a>
-                            </nav>
-                        </div>
+                <li class="menu-item <?php if ($controllerName == "Admin/Islemler" && $actionName == "AddUserPass") { ?> active<?php } ?>">
+                  <a href="<?php echo Wow::get("project/adminPrefix"); ?>/islemler/add-user-pass" class="menu-link">
+                    <div data-i18n="Tambah User Manual">Tambah User Manual</div>
+                  </a>
+                </li>
 
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="<?php echo Wow::get("project/adminPrefix"); ?>/post">
-                            <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                            Post
-                        </a>
-                        <a class="nav-link" href="<?php echo Wow::get("project/adminPrefix"); ?>/sayfalar">
-                            <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                            Pages
-                        </a>
-                        <a class="nav-link" href="<?php echo Wow::get("project/adminPrefix"); ?>/blog">
-                            <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                            Blog
-                        </a>
-                        <a class="nav-link" href="<?php echo Wow::get("project/adminPrefix"); ?>/bayilik">
-                            <div class="sb-nav-link-icon"><i class="fas fa-edit"></i></div>
-                            Premium
-                        </a>
+                <li class="menu-item <?php if ($controllerName == "Admin/Bakim") { ?> active<?php } ?>">
+                  <a href="<?php echo Wow::get("project/adminPrefix"); ?>/bakim" class="menu-link">
+                    <div data-i18n="Tambah User Manual">Maintenance</div>
+                  </a>
+                </li>
+
+                <li class="menu-item <?php if ($controllerName == "Admin/Wizard") { ?> active<?php } ?>">
+                  <a href="<?php echo Wow::get("project/adminPrefix"); ?>/wizard/export" class="menu-link">
+                    <div data-i18n="Export">Export</div>
+                  </a>
+                </li>
+
+                <li class="menu-item <?php if ($controllerName == "Admin/Wizard") { ?> active<?php } ?>">
+                  <a href="<?php echo Wow::get("project/adminPrefix"); ?>/wizard/import" class="menu-link">
+                    <div data-i18n="Import">Import</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="<?php echo Wow::get("project/adminPrefix"); ?>/bayilik" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-file-dollar"></i>
+                <div data-i18n="Akun Premium">Akun Premium</div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            id="layout-navbar">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="ti ti-menu-2 ti-sm"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+              <!-- Search -->
+              <div class="navbar-nav align-items-center">
+                <div class="nav-item navbar-search-wrapper mb-0">
+                  <a class="nav-item nav-link search-toggler d-flex align-items-center px-0" href="javascript:void(0);">
+                    <i class="ti ti-search ti-md me-2"></i>
+                    <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                  </a>
+                </div>
+              </div>
+              <!-- /Search -->
+
+              <ul class="navbar-nav flex-row align-items-center ms-auto">
+                
+
+                <!-- Style Switcher -->
+                <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="ti ti-md"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                        <span class="align-middle"><i class="ti ti-sun me-2"></i>Terang</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                        <span class="align-middle"><i class="ti ti-moon me-2"></i>Gelap</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </li>
+                <!-- / Style Switcher-->
+
+                
+
+                <!-- User -->
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="/themes/adminarea/assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
                     </div>
-                </div>
-                <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    <?php echo $uyelik["username"]; ?>
-                </div>
-            </nav>
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4 mt-4">
-                    <!--body wrapper start-->
-                    <div class="row">
-                        <section class="panel">
-                            <div class="panel-body">
-                                <?php
-                                if (count($this->get('notifications')) > 0) {
-                                    $this->renderView("shared/notifications", $this->get('notifications'));
-                                }
-                                $this->renderBody();
-                                ?>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="/themes/adminarea/assets/img/avatars/1.png" alt class="h-auto rounded-circle" />
                             </div>
-                        </section>
-                    </div>
-                    <!--body wrapper end-->
-                </div>
-            </main>
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Informatikamu 2021</div>
-                        <div>
-                            <a href="https://ig.informatikamu.id/about">About</a>
-                            &middot;
-                            <a href="https://ig.informatikamu.id/terms">Terms &amp; Conditions</a>
+                          </div>
+                          <div class="flex-grow-1">
+                            <span class="fw-medium d-block">John Doe</span>
+                            <small class="text-muted">Admin</small>
+                          </div>
                         </div>
-                    </div>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                    </li>
+                    
+                    <li>
+                      <a class="dropdown-item" href="<?php echo Wow::get("project/adminPrefix"); ?>/account/logout">
+                        <i class="ti ti-logout me-2 ti-sm"></i>
+                        <span class="align-middle">Log Out</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!--/ User -->
+              </ul>
+            </div>
+
+            <!-- Search Small Screens -->
+            <div class="navbar-search-wrapper search-input-wrapper d-none">
+              <input
+                type="text"
+                class="form-control search-input container-xxl border-0"
+                placeholder="Search..."
+                aria-label="Search..." />
+              <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            
+            <?php $this->renderBody();?>
+            
+             
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl">
+                <div
+                  class="footer-container d-flex align-items-center justify-content-between py-2 flex-md-row flex-column">
+                  <div>
+                    ©
+                    <script>
+                      document.write(new Date().getFullYear());
+                    </script>
+                    , made with ❤️ by <a href="https://layananapi.com" target="_blank" class="fw-medium">Layanan API</a>
+                  </div>
+                  
                 </div>
+              </div>
             </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
         </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
     </div>
+    <!-- / Layout wrapper -->
     <?php $this->section("section_modals"); ?>
     <?php $this->show(); ?>
     <?php $this->section('section_scripts'); ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="/themes/adminarea/informatikamuv1/scripts.js"></script>
-    <!--common scripts for all pages-->
-    <!-- <script src="/assets/themes/adminex/js/scripts.js"></script> -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+
+    <script src="/themes/adminarea/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/themes/adminarea/assets/vendor/js/bootstrap.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/hammer/hammer.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/i18n/i18n.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/typeahead-js/typeahead.js"></script>
+    <script src="/themes/adminarea/assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="/themes/adminarea/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="/themes/adminarea/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+    <!-- Main JS -->
+    <script src="/themes/adminarea/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="/themes/adminarea/assets/js/dashboards-ecommerce.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
     <script type="text/javascript">
         function KeepSession() {
             $.ajax({
@@ -215,6 +412,5 @@ $actionName     = $this->route->params["action"];
         <?php } ?>
     </script>
     <?php $this->show(); ?>
-</body>
-
+  </body>
 </html>
