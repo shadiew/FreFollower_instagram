@@ -1,0 +1,165 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px;
+  height: 85px;
+  align-items: center;
+  background-color: #fff;
+}
+
+.navbar-brand  {
+  color: #222 !important;
+  gap: 8px;
+}
+
+a.active {
+    font-weight: 700;
+    color: #ec4899;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 60%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+}
+
+nav ul li a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+nav .logo {
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  opacity: 0;
+  left: -5px;
+  top: -3px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span:nth-child(2) {
+  background-color: #222;
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #222;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    position: fixed;
+    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    background: rgb(79,70,229);
+    background: -moz-linear-gradient(106deg, rgba(79,70,229,1) 0%, rgba(48,43,144,1) 100%);
+    background: -webkit-linear-gradient(106deg, rgba(79,70,229,1) 0%, rgba(48,43,144,1) 100%);
+    background: linear-gradient(106deg, rgba(79,70,229,1) 0%, rgba(48,43,144,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#4f46e5",endColorstr="#302b90",GradientType=1);
+    height: 104vh;
+    align-items: flex-start;
+    z-index: 2;
+    width: 80%;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+  }
+  nav ul.slide {
+    opacity: 1;
+    transform: translateX(0);
+    justify-content: flex-start;
+    padding: 32px;
+    gap: 20px;
+    top: -16px;
+    margin-bottom: 0;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav .btn-primary {
+    margin-top: 8px;
+    width: 100%;
+    display: block;
+    border: 1px solid #fff;
+  }
+
+  nav .classbtn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  a {
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  a.active {
+    font-weight: 700;
+  }
+
+  .title-menu {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .navbar-brand {
+    gap: 8px;
+  }
+
+  .navbar-brand h4 {
+    font-size: 16px;
+  }
+  
+  .slide-menu-title {
+    margin-bottom: 18px;
+  }
+  nav .btn-border {
+    border: 1px solid #fff !important;
+  }
+}

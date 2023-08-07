@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @var \Wow\Template\View $this
+ * @var array              $model
+ */
+$helper = new \App\Libraries\Helpers();
+?>
+<div class="container bg-light">
+    
+    <div class="row">
+        <div class="col-12 p-4">
+            <div class="content">
+                <nav aria-label="breadcrumb" class="mt-4 small">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/blog" class="text-secondary text-decoration-none">BLOG</a></li>
+                        <!-- <li class="breadcrumb-item active"><?php echo $model["baslik"]; ?></li> -->
+                    </ol>
+                </nav>
+                <h1 class="lh-normal"><?php echo $model["baslik"]; ?></h1>
+                <div class="mb-1 text-muted font-monospace" style="font-size:9pt; margin-top:-8px !important;">
+                    Admin &#8226; <?php echo date("d F Y", strtotime($model["registerDate"])); ?>
+                </div>
+                <a href="/blog/<?php echo $model["seoLink"]; ?>" title="<?php echo $model["baslik"]; ?>">
+                    <img src="<?php echo $model["anaResim"]; ?>" alt="<?php echo $model["baslik"]; ?>" width="100%" class="rounded img-fluid mt-3 mb-4">
+                </a>
+                <?php echo $model["icerik"]; ?>
+               
+
+                <div class="row" style="margin-top:3rem;">
+                </div>
+                <!--<h3>Artikel Terkait</h3>-->
+                <!--<div class="row">-->
+                <!--    <?php foreach ($model["otherBlogs"] as $other) { ?>-->
+                <!--        <div class="col-md-4">-->
+                <!--            <a href="/blog/<?php echo $other["seoLink"]; ?>"><img src="<?php echo $other["anaResim"]; ?>" alt="<?php echo $other["baslik"]; ?>" title="<?php echo $other["baslik"]; ?>" class="img-responsive"/></a>-->
+                <!--            <a href="/blog/<?php echo $other["seoLink"]; ?>">-->
+                <!--                <h4><?php echo $other["baslik"]; ?></h4>-->
+                <!--            </a>-->
+                <!--            <p><?php echo $helper->blogExcerpt($other["icerik"], 200); ?></p>-->
+                <!--        </div>-->
+                <!--    <?php } ?>-->
+
+                <!--</div>-->
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.sidebar-dark-primary {
+  background-color: #212529;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+  box-shadow: none;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #c62e2c;
+  border-color: #c62e2c;
+  box-shadow: none;
+}
+.card-primary:not(.card-outline) > .card-header {
+  background-color: #212529;
+}
+.card-primary.card-outline {
+  border-top: 3px solid #c62e2c;
+}
+.bg-primary {
+  background-color: #212529 !important;
+}
+.lh-sm {
+  line-height: 1.3rem !important;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: #c62e2c;
+  color: #fff;
+}
+a {
+  color: #c62e2c;
+  text-decoration: none;
+  background-color: transparent;
+}
+@media only screen and (max-width: 480px) {
+  .vip-mobile-block {
+    display: block !important;
+  }
+}

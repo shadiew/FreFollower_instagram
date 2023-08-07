@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 213.44 213.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: #ddd;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #5c2c80;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="213.44" height="213.43"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-6600.38" y1="8876.31" x2="-6599.38" y2="8876.31" gradientTransform="matrix(213.44, 0, 0, -213.44, 1408752.95, 1894623.52)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f98b57"/>
+      <stop offset="1" stop-color="#e55539"/>
+    </linearGradient>
+  </defs>
+  <title>Asset 19</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g class="cls-2">
+        <rect class="cls-3" width="213.44" height="213.43"/>
+      </g>
+      <g>
+        <rect class="cls-4" x="51.33" y="46.24" width="113.14" height="118.29"/>
+        <rect class="cls-5" x="57.29" y="52.67" width="101.23" height="88.71"/>
+        <path class="cls-6" d="M147.11,92l15,15a1.66,1.66,0,0,0,3.09-.83V47.58a2.75,2.75,0,0,0-2.76-2.76H131.78A2.75,2.75,0,0,0,129,47.58v58.5a1.66,1.66,0,0,0,3.09.83Z"/>
+        <path class="cls-5" d="M157.65,82c3.22,0,3.23-5,0-5s-3.22,5,0,5"/>
+        <path class="cls-5" d="M155.09,51.34a78.25,78.25,0,0,1,.67,20.9,2.52,2.52,0,0,0,2.5,2.5,2.55,2.55,0,0,0,2.5-2.5A82.79,82.79,0,0,0,159.91,50a2.52,2.52,0,0,0-3.08-1.74,2.55,2.55,0,0,0-1.74,3.07"/>
+      </g>
+    </g>
+  </g>
+</svg>

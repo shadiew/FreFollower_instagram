@@ -1,0 +1,18 @@
+.sidebar-dark-primary {
+    background-color: #1f2641;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #1f2641;
+    border-color: #1f2641;
+    box-shadow: none;
+}
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #1f2641;
+}
+.bg-primary {
+    background-color: #1f2641 !important;
+}
+.lh-sm {
+    line-height: 1.3rem !important;
+}

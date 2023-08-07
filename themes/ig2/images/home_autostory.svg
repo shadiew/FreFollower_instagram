@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 213.44 213.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-6 {
+        fill: #5c2c80;
+      }
+
+      .cls-7 {
+        fill: #502872;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(0 0)">
+      <rect class="cls-1" width="213.44" height="213.44"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-6915.93" y1="9163.83" x2="-6914.93" y2="9163.83" gradientTransform="matrix(213.44, 0, 0, -213.44, 1476103.33, 1955991.35)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f98b57"/>
+      <stop offset="1" stop-color="#e55539"/>
+    </linearGradient>
+    <clipPath id="clip-path-2" transform="translate(0 0)">
+      <path class="cls-1" d="M36.52,104.84c12.55,27.73,42.85,47.38,78.23,47.38,35.72,0,66.25-20,78.58-48.14C180.78,76.35,150.49,56.8,115.1,56.8c-35.71,0-66.25,19.91-78.58,48"/>
+    </clipPath>
+  </defs>
+  <title>Asset 16</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g class="cls-2">
+        <rect class="cls-3" width="213.44" height="213.44"/>
+      </g>
+      <path class="cls-4" d="M115.1,56.8c-35.71,0-66.25,19.91-78.58,48,12.55,27.73,42.85,47.38,78.23,47.38,35.72,0,66.25-20,78.58-48.14C180.78,76.35,150.49,56.8,115.1,56.8" transform="translate(0 0)"/>
+      <g class="cls-5">
+        <path class="cls-6" d="M184.19,104.05A44.86,44.86,0,1,1,139.33,59.2a44.86,44.86,0,0,1,44.86,44.85" transform="translate(0 0)"/>
+      </g>
+      <g>
+        <path class="cls-7" d="M168.66,103.92a26.08,26.08,0,1,1-26.07-26.07,26.07,26.07,0,0,1,26.07,26.07" transform="translate(0 0)"/>
+        <path class="cls-4" d="M138.85,92.65a14.17,14.17,0,1,1-14.17-14.17,14.17,14.17,0,0,1,14.17,14.17" transform="translate(0 0)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 214.11 214.11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        fill: #ddd;
+      }
+
+      .cls-6 {
+        fill: #5c2c80;
+      }
+
+      .cls-7 {
+        fill: #502872;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <path class="cls-1" d="M0,107.05A107.06,107.06,0,1,0,107.06,0,107.06,107.06,0,0,0,0,107.05"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-6914.74" y1="8109.72" x2="-6913.74" y2="8109.72" gradientTransform="matrix(214.11, 0, 0, -214.11, 1480508.6, 1736471.26)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f98b57"/>
+      <stop offset="1" stop-color="#e55539"/>
+    </linearGradient>
+  </defs>
+  <title>Asset 11</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g class="cls-2">
+        <rect class="cls-3" width="214.11" height="214.11"/>
+      </g>
+      <g>
+        <path class="cls-4" d="M173.05,162.38H39.94a4,4,0,0,1-4-4V132.07a4,4,0,0,1,4-4H173.05a4,4,0,0,1,4,4v26.31a4,4,0,0,1-4,4"/>
+        <path class="cls-5" d="M173.05,162.38H39.94a4,4,0,0,1-4-4v-2.31H177.05v2.31a4,4,0,0,1-4,4"/>
+        <path class="cls-6" d="M88.44,48.87a5,5,0,0,0-5,5V94.92H75.82a5,5,0,0,0-3.63,8.44l31.22,33a4.9,4.9,0,0,0,3.35,1.53v-89Z"/>
+        <path class="cls-7" d="M138.27,94.92h-7.63V53.87a5,5,0,0,0-5-5H106.76v89a4.93,4.93,0,0,0,3.91-1.53l31.23-33a5,5,0,0,0-3.63-8.44"/>
+        <path class="cls-4" d="M126.81,106.06a125.79,125.79,0,0,1-13.39,15.69,2.5,2.5,0,1,0,3.54,3.54,134.45,134.45,0,0,0,14.17-16.71,2.51,2.51,0,0,0-.9-3.42,2.57,2.57,0,0,0-3.42.9"/>
+        <path class="cls-4" d="M134.62,103.88c3.22,0,3.22-5,0-5s-3.22,5,0,5"/>
+        <path class="cls-6" d="M166.62,142.23a5.29,5.29,0,1,1-5.29-5.28,5.29,5.29,0,0,1,5.29,5.28"/>
+      </g>
+    </g>
+  </g>
+</svg>

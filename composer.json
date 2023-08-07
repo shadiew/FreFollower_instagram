@@ -1,0 +1,8 @@
+{
+    "require": {
+        "jukylin/jaeger-php": "dev-master",
+        "imagekit/imagekit": "dev-master",
+        "halaxa/json-machine": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
